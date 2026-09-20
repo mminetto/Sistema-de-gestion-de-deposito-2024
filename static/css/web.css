@@ -1,0 +1,32 @@
+@font-face { font-family: Poppins; src: url('../../recursos/Poppins/Poppins-Regular.ttf'); font-weight: 400; }
+@font-face { font-family: Poppins; src: url('../../recursos/Poppins/Poppins-Bold.ttf'); font-weight: 700; }
+#page-content { max-width: 1100px; color: #c4d3d3; }
+.web-toolbar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 20px; }
+.web-toolbar .form-control { flex: 1; min-width: 200px; }
+.web-button { background: #94afb0; color: #24262d; border: 0; border-radius: 12px; padding: 8px 16px; }
+.web-empty { padding: 50px 20px; text-align: center; }
+.web-low { color: #ffc980; }
+#page-content .operation-item { gap: 14px; }
+#page-content .operation-details { min-width: 0; overflow-wrap: anywhere; }
+#search-results-container, #user-search-results-container { display: none; }
+.web-result { display: block; width: 100%; text-align: left; padding: 10px; border: 0; background: #353d3d; color: #d6e2e2; }
+.web-result:hover { background: #4b6262; }
+#print-area { display: none; }
+@media (max-width: 700px) {
+    header nav ul { flex-wrap: wrap; padding: 8px; }
+    header nav ul li { margin: 4px; }
+    #actionModal .col-4, #actionModal .col-8 { width: 100%; }
+    #confirmed-items-card { margin-bottom: 15px; }
+    #page-content .operation-item { flex-wrap: wrap; }
+}
+@media print {
+    body { background: white !important; }
+    body > :not(#print-area) { display: none !important; }
+    #print-area { display: block; color: black; padding: 20px; }
+    #print-area table { width: 100%; border-collapse: collapse; }
+    #print-area td, #print-area th { border-bottom: 1px solid #999; padding: 10px; text-align: left; }
+    #print-area tr { break-inside: avoid; }
+    .receipt-labels { break-before: page; }
+    .receipt-label { border: 1px dashed #777; padding: 5mm; margin-bottom: 5mm; break-inside: avoid; text-align: center; }
+    .receipt-label p { margin: 2mm 0; overflow-wrap: anywhere; }
+}
