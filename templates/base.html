@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Aplicación{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/historial.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/configuracion.css') }}">
+    <script src="static/jquery-3.7.1.min.js"></script>
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="static/css/animate.min.css"/>
+</head>
+<body>
+    <header class="sticky-top">
+        <nav>
+            <ul>
+                <li class="single" data-page="historial"><a href="{{ url_for('historial') }}" >  <svg width="35" height="35" viewBox="0 0 170 172" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M84.646 57.873V86.406L102.271 104.239" stroke="#94AFB0" stroke-width="10.6999" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M30.6286 49.8169L25.3412 49.8437C25.3557 52.7774 27.7026 55.1519 30.602 55.1667L30.6286 49.8169ZM48.5479 55.2579C51.468 55.2728 53.8472 52.8896 53.8618 49.935C53.8765 46.9803 51.5212 44.5731 48.601 44.5582L48.5479 55.2579ZM35.8258 31.6319C35.811 28.6773 33.432 26.2941 30.5118 26.3089C27.5917 26.3238 25.2363 28.7311 25.251 31.6857L35.8258 31.6319ZM26.4843 86.406C26.4843 83.4514 24.117 81.0561 21.1969 81.0561C18.2767 81.0561 15.9094 83.4514 15.9094 86.406H26.4843ZM119.018 146.648C121.546 145.168 122.41 141.895 120.947 139.338C119.485 136.78 116.251 135.906 113.723 137.386L119.018 146.648ZM135.03 115.827C133.567 118.384 134.432 121.657 136.959 123.136C139.487 124.616 142.722 123.742 144.184 121.184L135.03 115.827ZM36.286 36.9817C34.2108 39.0605 34.1941 42.4479 36.2488 44.5475C38.3033 46.6472 41.651 46.664 43.7262 44.5852L36.286 36.9817ZM133.025 37.4567C106.093 10.2063 62.5715 9.93042 35.8177 37.0005L43.2952 44.5664C65.8486 21.7464 102.674 21.879 125.547 45.0227L133.025 37.4567ZM35.8177 37.0005L26.8898 46.0339L34.3673 53.5998L43.2952 44.5664L35.8177 37.0005ZM30.602 55.1667L48.5479 55.2579L48.601 44.5582L30.6551 44.467L30.602 55.1667ZM35.9159 49.79L35.8258 31.6319L25.251 31.6857L25.3412 49.8437L35.9159 49.79ZM84.646 27.5568C116.767 27.5568 142.808 53.9045 142.808 86.406H153.383C153.383 47.9951 122.608 16.8569 84.646 16.8569V27.5568ZM84.646 145.255C52.5242 145.255 26.4843 118.907 26.4843 86.406H15.9094C15.9094 124.817 46.6838 155.955 84.646 155.955V145.255ZM113.723 137.386C105.174 142.39 95.2484 145.255 84.646 145.255V155.955C97.1575 155.955 108.903 152.568 119.018 146.648L113.723 137.386ZM142.808 86.406C142.808 97.1337 139.976 107.177 135.03 115.827L144.184 121.184C150.035 110.949 153.383 99.0654 153.383 86.406H142.808ZM43.7262 44.5852C54.2403 34.0522 68.6883 27.5568 84.646 27.5568V16.8569C65.7905 16.8569 48.6995 24.5459 36.286 36.9817L43.7262 44.5852Z" fill="#94AFB0"/>
+                    </svg>Historial</a></li>
+                <li class="single" data-page="busqueda"><a href="{{ url_for('busqueda') }}" > <svg width="35" height="35" viewBox="0 0 151 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M69.5663 25.4035C45.4025 25.4035 25.8139 44.9921 25.8139 69.1559C25.8139 93.3197 45.4025 112.908 69.5663 112.908C93.7301 112.908 113.319 93.3197 113.319 69.1559C113.319 44.9921 93.7301 25.4035 69.5663 25.4035ZM13.3132 69.1559C13.3132 38.0882 38.4986 12.9028 69.5663 12.9028C100.634 12.9028 125.819 38.0882 125.819 69.1559C125.819 100.224 100.634 125.409 69.5663 125.409C38.4986 125.409 13.3132 100.224 13.3132 69.1559Z" fill="#94AFB0"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M100.461 100.051C102.902 97.61 106.86 97.61 109.301 100.051L136.49 127.24C138.931 129.681 138.931 133.638 136.49 136.079C134.049 138.52 130.091 138.52 127.65 136.079L100.461 108.89C98.0204 106.449 98.0204 102.492 100.461 100.051Z" fill="#94AFB0"/>
+                    </svg>
+                    Búsqueda</a></li>
+                <li class="couple">
+                    <div class="procesos">
+                        <a href="#" id="ingresobtn" data-bs-toggle="modal" data-bs-target="#actionModal">
+                            <?xml version="1.0" encoding="iso-8859-1"?>
+                            <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                            <svg class="rotate-svg" height="40px" width="40px"  version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                 viewBox="0 0 512 512" xml:space="preserve">
+                            <path style="fill:#131b1b00;" d="M395.47,296.3H116.531c-36.816,0-57.855-42.009-35.803-71.491L225.983,30.621
+                                c14.993-20.043,45.041-20.043,60.034,0l145.254,194.188C453.325,254.291,432.286,296.3,395.47,296.3z"/>
+                            <path style="fill:  #94AFB0;" d="M443.755,215.471L298.501,21.284C288.382,7.759,272.893,0,256.001,0s-32.383,7.759-42.5,21.284
+                                L68.245,215.471c-13.759,18.393-15.916,42.579-5.631,63.119c10.286,20.54,30.946,33.298,53.916,33.298h66.552
+                                C185.227,422.598,275.94,512,387.153,512c8.608,0,15.589-6.979,15.589-15.589V381.652c0-8.61-6.981-15.589-15.589-15.589
+                                c-14.01,0-27.556-5.074-38.144-14.29c-6.494-5.651-16.339-4.971-21.993,1.525c-5.653,6.494-4.97,16.34,1.525,21.993
+                                c12.293,10.699,27.185,17.765,43.025,20.577v84.258c-86.772-7.791-155.289-79.949-157.307-168.237H395.47
+                                c22.97,0,43.63-12.759,53.917-33.298C459.671,258.052,457.514,233.866,443.755,215.471z M421.509,264.629
+                                c-5.043,10.069-14.777,16.081-26.04,16.081H116.53c-11.261,0-20.995-6.011-26.038-16.081c-5.043-10.07-4.027-21.466,2.72-30.484
+                                L238.466,39.957c4.173-5.581,10.565-8.781,17.534-8.781c6.97,0,13.36,3.2,17.534,8.781l145.254,194.188
+                                C425.534,243.165,426.551,254.56,421.509,264.629z"/>
+                            </svg>
+                             <span class="accion-titulo"> Ingresar</span> 
+                        </a>
+                        <a href="#" id="retirarbtn" data-bs-toggle="modal" data-bs-target="#actionModal">
+
+<svg height="40px" width="40px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 512 512" xml:space="preserve">
+<path style="fill:#1a131700;" d="M395.47,296.3H116.531c-36.816,0-57.855-42.009-35.803-71.491L225.983,30.621
+	c14.993-20.043,45.041-20.043,60.034,0l145.254,194.188C453.325,254.291,432.286,296.3,395.47,296.3z"/>
+<path style="fill:#94AFB0;" d="M443.755,215.471L298.501,21.284C288.382,7.759,272.893,0,256.001,0s-32.383,7.759-42.5,21.284
+	L68.245,215.471c-13.759,18.393-15.916,42.579-5.631,63.119c10.286,20.54,30.946,33.298,53.916,33.298h66.552
+	C185.227,422.598,275.94,512,387.153,512c8.608,0,15.589-6.979,15.589-15.589V381.652c0-8.61-6.981-15.589-15.589-15.589
+	c-14.01,0-27.556-5.074-38.144-14.29c-6.494-5.651-16.339-4.971-21.993,1.525c-5.653,6.494-4.97,16.34,1.525,21.993
+	c12.293,10.699,27.185,17.765,43.025,20.577v84.258c-86.772-7.791-155.289-79.949-157.307-168.237H395.47
+	c22.97,0,43.63-12.759,53.917-33.298C459.671,258.052,457.514,233.866,443.755,215.471z M421.509,264.629
+	c-5.043,10.069-14.777,16.081-26.04,16.081H116.53c-11.261,0-20.995-6.011-26.038-16.081c-5.043-10.07-4.027-21.466,2.72-30.484
+	L238.466,39.957c4.173-5.581,10.565-8.781,17.534-8.781c6.97,0,13.36,3.2,17.534,8.781l145.254,194.188
+	C425.534,243.165,426.551,254.56,421.509,264.629z"/>
+</svg>
+                            <span class="accion-titulo"> Retirar</span>
+                        </a>
+                    </div>
+                </li>
+                    
+                    
+                    
+                <li class="single" data-page="analiticas"> 
+                    <a href="{{ url_for('analiticas') }}"> 
+                        <svg width="35" height="35" viewBox="0 0 149 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M53.9084 15.5909C55.289 18.7547 53.8435 22.4388 50.6796 23.8194C42.2579 27.4945 34.8646 33.1768 29.1462 40.3693C23.4278 47.5618 19.5583 56.0456 17.8762 65.079C16.194 74.1124 16.7503 83.4204 19.4965 92.1891C22.2426 100.958 27.095 108.92 33.6294 115.381C40.1638 121.841 48.1812 126.602 56.9808 129.248C65.7803 131.894 75.094 132.344 84.1077 130.558C93.1213 128.773 101.56 124.807 108.687 119.007C115.814 113.207 121.411 105.749 124.99 97.286C126.334 94.1066 130.002 92.619 133.181 93.9634C136.36 95.3079 137.848 98.9752 136.504 102.155C132.13 112.498 125.288 121.613 116.578 128.702C107.867 135.792 97.553 140.639 86.5363 142.821C75.5197 145.003 64.1363 144.453 53.3813 141.219C42.6263 137.985 32.8272 132.166 24.8407 124.27C16.8542 116.374 10.9235 106.642 7.56711 95.9251C4.2107 85.2078 3.53076 73.8314 5.58675 62.7905C7.64274 51.7497 12.372 41.3806 19.3612 32.5897C26.3504 23.7989 35.3866 16.854 45.6798 12.3621C48.8437 10.9815 52.5277 12.4271 53.9084 15.5909Z" fill="#94AFB0"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M68.7613 8.48352C69.9335 7.31135 71.5233 6.65283 73.181 6.65283C82.2099 6.65283 91.1503 8.4312 99.4919 11.8864C107.834 15.3416 115.413 20.406 121.797 26.7903C128.182 33.1747 133.246 40.7541 136.701 49.0957C140.156 57.4373 141.935 66.3777 141.935 75.4066C141.935 78.8586 139.136 81.6569 135.684 81.6569H73.181C69.729 81.6569 66.9307 78.8586 66.9307 75.4066V12.9032C66.9307 11.2455 67.5892 9.65568 68.7613 8.48352ZM79.4313 19.5018V69.1563H129.086C128.5 63.9148 127.178 58.7713 125.152 53.8795C122.325 47.0545 118.182 40.8532 112.958 35.6297C107.734 30.4061 101.533 26.2625 94.7081 23.4355C89.8163 21.4093 84.6728 20.0879 79.4313 19.5018Z" fill="#94AFB0"/>
+                            </svg>
+                            Analíticas</a></li>
+                <li class="single" data-page="configuracion"><a href="{{ url_for('configuracion') }}" > <svg width="35" height="35" viewBox="0 0 163 163" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M81.3521 101.649C92.5314 101.649 101.594 92.5861 101.594 81.4068C101.594 70.2276 92.5314 61.165 81.3521 61.165C70.1729 61.165 61.1104 70.2276 61.1104 81.4068C61.1104 92.5861 70.1729 101.649 81.3521 101.649Z" stroke="#94AFB0" stroke-width="10" stroke-linecap="round"/>
+                    <path d="M93.2636 14.9613C90.7833 13.9341 87.6398 13.9341 81.352 13.9341C75.0642 13.9341 71.9207 13.9341 69.4404 14.9613C66.134 16.3309 63.507 18.958 62.1373 22.2645C61.5121 23.7739 61.2674 25.5293 61.1717 28.0898C61.031 31.8527 59.1013 35.3357 55.8402 37.2184C52.5792 39.1011 48.598 39.0308 45.2689 37.2713C43.0036 36.0739 41.361 35.4081 39.7412 35.1948C36.1928 34.7277 32.6042 35.6892 29.7648 37.868C27.6353 39.502 26.0634 42.2247 22.9195 47.6699C19.7757 53.1152 18.2038 55.8378 17.8534 58.4992C17.3863 62.0475 18.3479 65.6361 20.5266 68.4756C21.521 69.7717 22.9187 70.8608 25.0878 72.2237C28.2767 74.2276 30.3284 77.6411 30.3282 81.4067C30.328 85.1724 28.2763 88.5851 25.0878 90.5884C22.9183 91.952 21.5205 93.0417 20.5259 94.3379C18.3472 97.1771 17.3856 100.765 17.8528 104.314C18.2031 106.975 19.775 109.698 22.9189 115.143C26.0628 120.588 27.6347 123.311 29.7642 124.945C32.6036 127.123 36.1922 128.085 39.7405 127.618C41.3602 127.405 43.0027 126.739 45.2679 125.542C48.5972 123.782 52.5787 123.712 55.8399 125.595C59.1011 127.478 61.031 130.961 61.1717 134.724C61.2675 137.284 61.5121 139.04 62.1373 140.549C63.507 143.855 66.134 146.483 69.4404 147.852C71.9207 148.879 75.0642 148.879 81.352 148.879C87.6398 148.879 90.7833 148.879 93.2636 147.852C96.5698 146.483 99.1972 143.855 100.566 140.549C101.192 139.04 101.437 137.284 101.532 134.724C101.673 130.961 103.602 127.478 106.863 125.595C110.124 123.711 114.106 123.782 117.436 125.542C119.701 126.739 121.343 127.404 122.962 127.617C126.511 128.085 130.1 127.123 132.939 124.945C135.068 123.311 136.64 120.588 139.784 115.142C142.928 109.697 144.5 106.975 144.851 104.314C145.317 100.765 144.356 97.1764 142.177 94.3372C141.183 93.041 139.785 91.9514 137.615 90.5884C134.427 88.5851 132.375 85.1717 132.375 81.4061C132.375 77.6404 134.427 74.2283 137.615 72.2251C139.785 70.8614 141.183 69.7724 142.178 68.4756C144.357 65.6366 145.318 62.048 144.851 58.4996C144.501 55.8383 142.929 53.1157 139.785 47.6704C136.641 42.2252 135.069 39.5025 132.94 37.8685C130.1 35.6897 126.511 34.7281 122.963 35.1953C121.344 35.4085 119.701 36.0743 117.436 37.2715C114.107 39.0311 110.125 39.1015 106.864 37.2186C103.602 35.3358 101.673 31.8525 101.532 28.0894C101.437 25.5291 101.192 23.7738 100.566 22.2645C99.1972 18.958 96.5698 16.3309 93.2636 14.9613Z" stroke="#94AFB0" stroke-width="10" stroke-linecap="round"/>
+                    </svg>
+                    Configuración</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        <!-- El contenido específico de cada página irá aquí -->
+        {% endblock %}
+    </main>
+
+    <!-- <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#retiroModal">
+        Retiro de Materiales
+      </button>
+    Agrega tus modales aquí (copiar y pegar del archivo actual) -->
+    
+    <!-- Formulario de usuario -->
+
+    <div id="actionModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="ingresoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" role="document">
+            <div class="modal-content" id="content-modal">
+                <div class="modal-header">
+                    <p class="modal-title fs-5" id="ModalLabel"></p>
+                    <a type="button" class="" data-bs-dismiss="modal" aria-label="Close"><svg width="40" height="40" viewBox="0 0 79 61" fill="#24262D" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M66.9343 30.1611C66.9343 45.4432 54.5456 57.8319 39.2635 57.8319C23.9814 57.8319 11.5928 45.4432 11.5928 30.1611C11.5928 14.879 23.9814 2.49036 39.2635 2.49036C54.5456 2.49036 66.9343 14.879 66.9343 30.1611ZM16.641 30.1611C16.641 42.6552 26.7695 52.7837 39.2635 52.7837C51.7576 52.7837 61.8862 42.6552 61.8862 30.1611C61.8862 17.667 51.7576 7.53859 39.2635 7.53859C26.7695 7.53859 16.641 17.667 16.641 30.1611Z" fill="#94afb0"/>
+                        <path d="M26.257 23.6722C24.9859 22.6906 24.986 21.0992 26.257 20.1176C27.528 19.1361 29.5887 19.1361 30.8597 20.1176L39.2814 26.6215L47.6946 20.1242C48.9658 19.1427 51.0263 19.1427 52.2972 20.1242C53.5685 21.1058 53.5685 22.6972 52.2972 23.6788L43.8841 30.176L52.294 36.6705C53.5649 37.6522 53.5649 39.2434 52.294 40.2249C51.0227 41.2067 48.9622 41.2067 47.691 40.2249L39.2814 33.7305L30.8691 40.2272C29.5981 41.2087 27.5374 41.2087 26.2664 40.2272C24.9954 39.2455 24.9954 37.6542 26.2664 36.6725L34.6787 30.176L26.257 23.6722Z" fill="#94afb0"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="modal-body">
+
+                    
+                        <div class="row">
+                          <div class="col-4" id="infocolumn">
+                            <div class="alert d-none" id="formalert" role="alert">
+                                A simple primary alert—check it out!
+                              </div>
+                              
+                                <!-- Sección para mostrar datos confirmados -->
+                                <div class="card" id="confirmed-items-card">
+                                    <div class="card-header sticky-top bg-secondary-subtle " id="confirmed-items-header">
+                                         <p id="confirmed-items-title" class="mb-0">Listado</p> 
+                                        <div id="cancel-container" class="d-none justify-content-center">
+                                        
+                                    </div>
+                                    <div class="progress d-none" id="barraprog">
+                                        <div class="progress-bar" role="progressbar" style="width: 100%;"></div>
+                                      </div>
+                                    </div>
+                                    
+                                    <ul class="list-group list-group-flush p-0"  id="confirmed-items-container">
+                                      
+                                  </ul>
+                                  
+                                  </div>
+                          </div>
+                          <div class="col-8 justify-content-center ">
+                            <div class="sticky-top d-none animate__animated animate__fadeInUp" id="userFormDiv">
+                                <div class="search-container" id="user-search-container">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="user-search-addon">
+                                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="#ffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Buscar por nombre, apellido o DNI" aria-label="Username" aria-describedby="user-search-addon" id="user-search" autocomplete="off">
+                                    </div>
+                                    <div id="user-search-results-container" class="search-results-container">
+                                        <div id="user-search-results" class="search-results">
+                                            <!-- Los resultados de búsqueda se añadirán aquí -->
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <!-- Formulario de usuario -->
+                                <form id="userForm" class="needs-validation " novalidate>
+                                    <!-- Campos del formulario -->
+                                    <div class="form-group mb-3">
+                                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre" required>
+                                        <div class="invalid-feedback">Nombre es obligatorio.</div>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input type="text" class="form-control" id="apellido" placeholder="Apellido" name="apellido" required>
+                                        <div class="invalid-feedback">Apellido es obligatorio.</div>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input type="text" class="form-control" id="telefono" placeholder="Teléfono" name="telefono" required>
+                                        <div class="invalid-feedback">Teléfono es obligatorio.</div>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
+                                        <div class="invalid-feedback">Email es obligatorio.</div>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input type="number" class="form-control" id="dni" placeholder="DNI" name="dni" required>
+                                        <div class="invalid-feedback">DNI es obligatorio.</div>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <select class="form-select" id="seccion" name="seccion" required>
+                                            <option value="" selected disabled>Sección</option>
+                                           
+                                            <!-- Añadir más secciones según sea necesario -->
+                                        </select>
+                                        <div class="invalid-feedback">Sección es obligatoria.</div>
+                                    </div>
+                                    <div class="row">
+                                        <button type="button" class="btn btn-primary col-8 p-1 fbut" id="submitUserForm">Confirmar Usuario</button>
+                                        
+                                            <button type="button" class="btn btn-secondary  col-4 p-1 fbut" id="backToItemsForm">Volver</button>
+
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <div class="sticky-top" id="scont">
+                            <div class="row">
+                                <div class="search-container col mb-3" >
+                                    <div class="input-group   w-100 h-100">
+                                        <span class="input-group-text" id="basic-addon1">
+                                            <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15.7955 15.8111L21 21M18 10.5C18 14.6421 14.6421 18 10.5 18C6.35786 18 3 14.6421 3 10.5C3 6.35786 6.35786 3 10.5 3C14.6421 3 18 6.35786 18 10.5Z" stroke="#ffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Buscar..." aria-label="Username" aria-describedby="basic-addon1" id="search" autocomplete="off">
+                                    </div>
+                                    <div id="search-results-container" class="search-results-container">
+                                        <div id="search-results" class="search-results" >
+                                            <!-- Los resultados de búsqueda se añadirán aquí -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group  col mb-0">
+                                    
+                                    
+                                        
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control " placeholder="Código de Barras" id="barcode" name="codigo_barras" required>
+                                            <button class="button-58 w-30" role="button" id="generate-code"><svg fill="#000000" width="30px" height="30px" viewBox="0 0 24 24" id="barcode" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg" class="icon flat-line"><path id="primary" d="M12,4V20M17,8H16m1,4H16M7,8H8m9,8H16M7,16H8M7,12H8" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path><path id="primary-2" data-name="primary" d="M16,3h4a1,1,0,0,1,1,1V8" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path><path id="primary-3" data-name="primary" d="M16,21h4a1,1,0,0,0,1-1V16" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path><path id="primary-4" data-name="primary" d="M8,3H4A1,1,0,0,0,3,4V8" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path><path id="primary-5" data-name="primary" d="M3,16v4a1,1,0,0,0,1,1H8" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></svg></button>
+                                            <div class="invalid-feedback" id="barcode-error">Código de barras es obligatorio.</div>
+                                          </div>
+                                         
+                                          
+                                           
+                                           
+                                           
+                                       
+   
+                                     
+                                </div>
+                            </div>
+                            
+                            <form id="ingresoForm" class="needs-validation " novalidate >
+                                
+                                <div class="row mb -3">
+                                    <div class="col m-0">
+                                <div class="form-group m-0">
+                                    
+                                    <div class="form-floating m-0">
+                                       
+                                        <input list="categories" type="text" class="form-control" id="categoria" placeholder="" name="categoria" aria-describedby="basic-addon2" required>
+                                            
+                                        <label for="categoria">Categoria</label>
+        
+                                        <datalist id="categories"></datalist>
+                                        
+                                        <div class="invalid-feedback" id="category-error">Categoría es obligatoria.</div>
+                                        
+                                    </div>
+                                    <!-- <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" >
+                                        
+                                      </div> -->
+                                </div>
+                            </div>
+                            <div class="col m-0">
+                                <div class="form-group m-0 ">
+                                    <div class="form-floating m-0">
+                                    <input list="models" type="text" class="form-control" id="modelo" placeholder="Modelo" name="modelo" required>
+                                    <datalist id="models"></datalist>
+                                    <div class="invalid-feedback">Modelo es obligatorio.</div>
+                                    <label for="modelo">Modelo</label>
+                                </div>
+                                </div>
+                            </div>
+                                
+                            </div>
+                            
+                         
+                            
+                                
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <div class="form-group mb-3">
+                                            <select class="form-select " id="types" name="tipo" required>
+                                                <option value="" selected disabled>Tipo</option>
+                                            </select>
+                                            <div class="invalid-feedback">Tipo es obligatorio.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group mb-3">
+                                            <select class="form-select" id="states" name="estado" required>
+                                                <option value="" selected disabled>Estado</option>
+                                            </select>
+                                            <div class="invalid-feedback">Estado es obligatoria.</div>
+                                        </div>
+                                    </div>
+                                   
+                              
+                                    <div class="col">
+                                        
+                                        <div class="form-group mb-3">
+                                            <select class="form-select" id="locations" name="ubicacion" required>
+                                                <option value="" selected disabled>Ubicación</option>
+                                            </select>
+                                            <div class="invalid-feedback">Ubicación es obligatoria.</div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row mb-3 pt-3  border-input-form">
+                                    
+                                    <div class="col bottom-input-r">
+                                        <div class="input-group mb-3">
+                                            <input type="number" class="form-control" id="cantidad" placeholder="Cantidad" name="cantidad" min="0" oninput="validity.valid||(value='');"  aria-describedby="basic-addon2" required>
+                                            <span class="input-group-text" id="basic-addon2">stock</span>
+                                            <div class="invalid-feedback" id="cantidad-error">Cantidad es obligatoria y debe ser mayor a 0.</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-3 bottom-input-l">
+                                        <select class="form-select brl" id="units" name="unidad" required>
+                                            <option value="" selected disabled>Unidad</option>
+                                        </select>
+                                        <div class="invalid-feedback">Unidad es obligatoria.</div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group mb-3 d-f">
+                                            <input type="number" class="form-control" id="stock_critico" placeholder="Stock Crítico" name="stock_critico" min="0" oninput="validity.valid||(value='');" required>
+                                            <div class="invalid-feedback" id="stock_critico-error">Stock crítico es obligatorio.</div>
+                                        </div>
+                                    </div>  
+                                </div>
+                           
+                           <div class="row">
+                                <button type="button" class="btn btn-primary col-7 p-1 fbut" id="addItem">Agregar ítem</button>
+                           
+                            
+                                <button type="button" class="btn btn-success col-5 p-1 fbut" id="confirmItems">Confirmar ítems</button>
+                           
+                            </div>
+                            </form>
+                        </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+                        <!-- Formulario para ingreso de materiales -->
+                        
+                   
+                
+            </div>
+                
+            </div>
+        </div>
+    </div>
+   
+</body>
+<script src="static/bootstrap.bundle.min.js"></script>
+<!-- <script src="{{ url_for('static', filename='script.js') }}"></script> -->
+ <script>var currentPage = "{{ current_page }}";</script>
+<script type="module" src="{{ url_for('static', filename='script.js') }}"></script>
+
+</html>
+    

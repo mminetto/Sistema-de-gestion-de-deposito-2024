@@ -1,0 +1,395 @@
+/* Property 1=Inico */
+/* Reset CSS */
+
+:root {
+    --border-size: 0.125rem;
+    --duration: 250ms;
+    --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --font-family: monospace;
+    --color-primary: white;
+    --color-secondary: black;
+    --color-tertiary: dodgerblue;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --space: 1rem;
+  }
+html{
+    height: 100%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif !important;
+    box-sizing: border-box !important;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: radial-gradient(50% 158.02% at 50% 50%, #434f4e 0%, #353d3d 100%) !important;
+
+}
+.modal-content,.search-results{
+    background: linear-gradient(90deg, rgba(46, 50, 57, 0.405) 3%, rgba(80, 87, 100, 0.235465) 54.5%, rgba(128, 139, 159, 0) 100%) !important;
+    filter: drop-shadow(0px 3.53161px 3.53161px rgba(0, 0, 0, 0.25)) !important;
+    backdrop-filter: blur(12.6814px) !important;
+}
+
+.border-retirar{
+    border-color: rgb(176 148 154 / 50%) !important;
+}
+.border-ingresar{
+    border-color: rgb(148 176 157 / 50%) !important ;
+}
+.modal-header{
+
+    display: flex !important;
+    justify-content: center !important ;
+    padding: 10px !important;
+}
+.modal-header .btn-close{
+    margin: 0 !important;
+}
+.modal-header p{
+    color:#94AFB0;
+    font-weight: bold !important;
+    width: 100% !important;
+    justify-content: center !important;
+}
+.fbut{
+    background-color: #94AFB0 !important;
+    font-weight: bold !important;
+    padding: 8px 5px !important;
+    transition: all 0.3s ease;
+} 
+.fbut:hover{
+    background-color: #94afb0dc !important;
+} 
+#addItem,#submitUserForm{
+    border: 1.82748px solid #24262D;
+    border-radius: 36.5497px 0px 36.0269px 36.5497px;
+    color: #24262D;
+}
+#confirmItems,#backToItemsForm{
+    border: 1.82748px solid #24262D;
+    border-radius: 0px 36.5497px 36.5497px 36.0269px;
+    color: #9c2a2a  ;
+}
+#user-search-container{
+    width: 100% !important;
+    display: block !important;
+}
+header {
+    font-weight: bold !important;
+    background: rgba(53, 60, 65, 0.55) !important;
+    border: 2px solid #a3c3c948 !important;
+    backdrop-filter: blur(22.8077px) !important;
+    padding: 0px;
+    border-radius: 20px;
+    margin: 9px;
+    filter: drop-shadow(0px 3.53161px 3.53161px rgba(0, 0, 0, 0.301)) !important;
+}
+
+header nav {
+    font-weight: bold !important;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 100% !important;
+    border-radius: 29px;
+}
+
+header nav ul {
+    font-weight: bold !important;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0px 10px;
+}
+.procesos {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+
+    border-radius: 30px;
+    justify-content: space-around !important;
+}
+.procesos a {
+    flex-grow: 1;
+    display: flex;
+align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    padding: calc(var(--space) / 1.125) var(--space) var(--space);
+    color: #96babd;
+    font-size: 1rem;
+    font-family: var(--font-family);
+    text-decoration: none;
+    transition: flex-grow var(--duration) var(--ease);
+}
+#ingresobtn{
+    background-color: #131b1b;
+    border-radius: 30px 0px 0px 30px;
+    transition: all 0.3s ease;
+}
+#retirarbtn{
+    background-color: #1a1317;
+    border-radius: 0px 30px 30px 0px;
+    transition: all 0.3s ease;
+}
+#ingresobtn:hover{
+    background-color: #1d2927;
+
+}
+#retirarbtn:hover{
+    background-color: #33272f;
+
+}
+.procesos a + a {
+    border-left: #c2c2c26e 2px solid;
+    margin-left: calc(var(--border-size) * -1);
+}
+
+/* Ocultar el texto y evitar que ocupe espacio */
+.procesos .accion-titulo {
+    opacity: 0;
+    max-width: 0;
+    font-size: 1.1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    color: #96babd;
+}
+
+/* Mostrar el texto al hacer hover */
+.procesos a:hover .accion-titulo {
+    opacity: 1;
+    max-width: 110px; /* Ajusta el ancho máximo según necesites */
+    padding-left: 10px;
+}
+
+header nav ul .single a {
+    font-weight: 100 !important;
+    text-decoration: none;
+     font-weight: 500; 
+    font-size: 1.5rem;
+    color: #a3c7c9 !important;
+    padding: 6px 10px;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px;
+}
+header nav ul .single:first-child {
+    border-right: 2px solid rgba(36, 38, 45, 0.69);
+}
+header nav ul .single:last-child  {
+    border-left: 2px solid rgba(36, 38, 45, 0.69);
+}
+header nav ul .single {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 6px !important;
+}
+header nav ul li  {
+    width: 100% !important;
+    height: 100% !important;
+}
+header nav ul .single a svg{
+    padding: 1px !important;
+    transition:stroke 0.2s, fill 0.2s !important;
+}
+header nav ul .single a{
+    transition: all 0s ease;
+    border-radius: 15px !important;
+    
+}
+header nav ul .single a:hover {
+    text-decoration: none;
+    background-color: rgba(109, 88, 88, 0.281) ;
+    
+}
+.active-btn{
+    background-color: #3f494dd2!important;
+}
+/* header nav ul .single a:active {
+    text-decoration: none;
+    background-color: rgba(192, 28, 28, 0.425) !important;
+    
+} */
+
+/* header nav ul .single:last-child a:hover svg path {
+    stroke: #C52E2E !important;
+}
+
+header nav ul .single:last-child a:hover svg path{
+    fill: #fafafa00 !important;
+}
+
+header nav ul .single a:hover svg path {
+    stroke: #C52E2E !important; 
+    fill: #C52E2E !important; 
+} */
+#category-error{
+    color:white !important;
+}
+#basic-addon2{
+    color:rgb(179, 223, 181) !important;
+} 
+
+.container {
+    text-align: center;
+    padding: 50px;
+}
+
+.modal-header, .modal-body, .modal-footer {
+    padding: 20px;
+}
+
+.modal-body {
+    padding-top: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+
+.form-select {
+    margin-bottom: 10px;
+}
+
+
+
+
+.search-result-card {
+    padding: 10px;
+    cursor: pointer;
+    color: black !important;
+    display: flex;
+    align-items: center;
+}
+
+.search-result-card p {
+    color: rgb(255, 255, 255) !important;
+    margin-bottom: 0.3rem;
+}
+
+.search-result-card:hover {
+    background-color: rgba(88, 96, 109, 0.815);
+    border-radius: 20px;
+    
+}
+
+.search-results-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-results {
+    max-height: 200px;
+    overflow-y: auto;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    position: absolute; 
+    z-index: 1000; 
+    background: #fff; 
+    width: 100%;    
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+}
+
+
+.bottom-input-r { 
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  .bottom-input-l {
+
+    padding-left: 0 !important;
+  }
+  .brl{
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+
+  .border-input-form{
+    border-top: 1px solid #96babd79 !important; 
+  
+  }
+.ser-search-container{  
+    width: 50%;
+}
+
+
+
+#user-search-container .btn-custom {
+  margin-left: 10px;
+  width: 100px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Puedes añadir más estilos aquí según sea necesario */
+}
+
+#user-search-container {
+    width: 55%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+.button-58 {
+    width: 20% !important;
+    align-items: center;
+    background-color: #06f;
+    border: 2px solid #06f;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    fill: #000;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    letter-spacing: -.8px;
+    line-height: 24px;
+    outline: 0;
+    padding: 0 17px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    border-radius: 0px 10px 10px 0px;
+  }
+  
+  .button-58:focus {
+    color: rgb(0, 0, 0);
+  }
+  #barcode-error{
+    font-size: 0.86rem !important;
+  }
+  .button-58:hover {
+    background-color: #3385ff;
+    border-color: #3385ff;
+    fill: #06f;
+  }
+  

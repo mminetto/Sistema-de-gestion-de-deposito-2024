@@ -1,0 +1,48 @@
+
+
+.operation-left-icon i {
+    font-size: 24px;
+    color: green;
+}
+
+.operation-details {
+    flex-grow: 1;
+    padding: 0 15px;
+}
+
+.item-info {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.item-category {
+    color: #4cc7c2; 
+}
+
+.item-quantity {
+    background-color: #333;
+    padding: 5px;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.operation-user-date {
+    font-size: 14px;
+    color: #ccc; 
+}
+
+.operation-right-icon .print-receipt-btn {
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.operation-right-icon .print-receipt-btn i {
+    font-size: 24px;
+    color: #ccc;
+}
+
+.rotate-svg{
+    transform: rotate(180deg);
+}
