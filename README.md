@@ -1,33 +1,35 @@
 # Sistema de Gestión de Depósito Escolar
 
-## Abrir y usar
+Proyecto desarrollado originalmente en el secundario para administrar los productos del depósito del colegio. Esta versión web conserva el diseño original y permite registrar ingresos, retiros y consultar el stock desde el navegador.
 
-Hacé doble clic en **index.html**. Se abre en Chrome, Edge o Firefox sin instalar Python, sin servidor y sin Internet. Conservá junto al archivo las carpetas `static` y `recursos`.
+## Cómo usarlo
 
-La versión directa reutiliza los formularios, estilos, iconos y distribución originales. Comienza con un inventario vacío, sin productos ficticios.
+1. Descargá el proyecto y descomprimí la carpeta.
+2. Abrí `index.html` con doble clic.
+3. Usá **Ingresar** para registrar productos o **Retirar** para descontar existencias. Agregá los ítems y confirmá los datos del responsable para guardar el movimiento.
 
-1. **Ingresar:** generá o escribí un código único, completá el producto y pulsá **Agregar ítem**.
-2. **Confirmar ítems:** completá el responsable y pulsá **Confirmar Usuario**. Recién entonces se guardan el stock y el movimiento.
-3. **Retirar:** buscá un producto existente, indicá su cantidad y confirmá el responsable. No se permite retirar más que el stock disponible. Un retiro completo deja stock cero y conserva el historial.
-4. **Búsqueda:** consultá las existencias y las alertas de stock bajo.
-5. **Historial → Remito:** descargá el remito directamente en PDF, con páginas adicionales de etiquetas recortables, o descargá **solo etiquetas PDF**. También podés imprimir el remito con sus etiquetas. Cada etiqueta incluye producto, código legible y código de barras CODE128. Imprimí al 100% y recortá por la línea punteada. Se genera una etiqueta por producto del movimiento.
-6. **Configuración:** administrá opciones y exportá/importá respaldos JSON. La importación reemplaza los datos después de validar el archivo y pedir confirmación.
+No requiere instalar Python, iniciar un servidor ni tener conexión a Internet. Mantené las carpetas `static` y `recursos` junto a `index.html`.
 
-Los lectores de códigos de barras que funcionan como teclado pueden usarse en el campo Código de Barras. Se admiten códigos existentes y se generan identificadores de 12 dígitos. Las etiquetas CODE128 admiten caracteres ASCII imprimibles; si un identificador no puede representarse o es demasiado largo para imprimirse de forma legible, se muestra un error sin cambiar el inventario.
+## Funciones
 
-## Guardado
+- Registro de ingresos y retiros, con control del stock disponible.
+- Búsqueda de productos por nombre, categoría, código o ubicación.
+- Historial de movimientos y responsables.
+- Alertas de stock bajo.
+- Descarga e impresión de remitos en PDF.
+- Etiquetas recortables con códigos de barras, incluidas en el remito o en un PDF aparte.
+- Exportación e importación de respaldos desde **Configuración**.
 
-Los datos quedan en `localStorage` del navegador. Usá siempre el mismo navegador, perfil y ubicación del archivo. Borrar los datos del navegador, usar modo privado o mover el archivo puede hacer que dejen de estar disponibles. **Exportá respaldos periódicos**, especialmente antes de trasladar el proyecto o cambiar de equipo.
+Para descargar un remito o sus etiquetas, entrá a **Historial → Remito**. Imprimí las etiquetas al 100% para conservar su tamaño.
 
-Es una edición local: no sincroniza entre computadoras ni implementa autenticación. El responsable identifica cada movimiento. Una base `materials.db` anterior no se importa automáticamente.
+## Guardado de datos
 
-## Código
+Los datos se guardan en el navegador del equipo y permanecen al cerrar la página. Usá el mismo navegador, perfil y ubicación del proyecto; el inventario no se sincroniza entre computadoras.
 
-- `index.html`: entrada directa sin recursos remotos.
-- `static/web.js`: navegación, formularios, consultas, remitos y respaldos.
-- `static/store.js`: persistencia y validación de movimientos completos antes de guardar.
-- `static/receipts.js`: descarga de PDF, paginación y etiquetas CODE128. Las bibliotecas jsPDF y JsBarcode se incluyen localmente en `static/vendor`, sin depender de Internet.
-- `static/css/web.css`: fuente local, adaptación móvil e impresión.
-- Los archivos Python, plantillas y scripts anteriores se conservan como referencia; no son necesarios para ejecutar la nueva versión.
+**Exportá respaldos desde Configuración** antes de borrar los datos del navegador, mover el proyecto o cambiar de equipo. Evitá usar el modo incógnito.
 
-Pruebas del inventario: `node --test tests/store.test.cjs`.
+## Tecnologías
+
+HTML, CSS y JavaScript, con Bootstrap, jQuery, jsPDF y JsBarcode. El almacenamiento local utiliza `localStorage`.
+
+Los archivos de la versión original en Python y Flask se conservan como referencia; no son necesarios para ejecutar la versión web.
